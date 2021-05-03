@@ -28,7 +28,7 @@ Returns authorization when providing valid credentials.
 Retrieves a list with all API keys with their status, creation date and requested IPFS node paths.
 
 ### POST `http://localhost:8080/v1/apiKeys` (Authentication required)
-Retrieves a list with all API keys with their status, creation date and requested IPFS node paths.
+Creates a new active API key
 
 ### POST `http://localhost:8080/v1/apiKeys/:id/disable` (Authentication required)
 Disables API key for future requests.
