@@ -11,7 +11,7 @@ Docker
 3. Make sure ports :3000, :5001, :8080 and :27017 are not being used as we're going to run our images on these ports.
 4. Build and run images `docker-compose up --build -d`
 
-You can access the web client from `http://localhost/3000` by using `admin:admin` as credentials.
+You can access the web client from `http://localhost/3000` by using email: `admin@fleek.us` and password: `fleek` as credentials.
 
 ## Endpoints
 
