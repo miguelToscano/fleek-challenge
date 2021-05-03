@@ -7,6 +7,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     external_links: 
+      - ipfs
       - mongo
     restart: always
     ports:
@@ -20,6 +21,11 @@ services:
     #   - dbdata:/data/db
     ports: 
       - "27017:27017"
+
+  ipfs:
+    image: ipfs/go-ipfs:latest
+    ports:
+      - "5001:5001"
 
   fleek-frontend:
     container_name: react

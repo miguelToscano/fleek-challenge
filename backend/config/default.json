@@ -13,13 +13,13 @@
     "expirationTime": "640000s"
   },
   "ipfs": {
-    "host": "localhost",
+    "host": "ipfs",
     "port": 5001
   },
   "database": {
     "host": "mongo",
     "port": 27017,
-    "name": "fleek-backend"
+    "name": "node"
   }
 }
   
