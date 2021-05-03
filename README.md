@@ -32,3 +32,11 @@ Disables API key for future requests.
 
 ### GET `http://localhost:8080/v1/apiKeys/:id` (Authentication required)
 Retrieves a single API key with it's status, creation date and requested IPFS node paths
+
+## IPFS HTTP API
+
+This service also works as a proxy to a IPFS node running on port :5001 by using its HTTP API. See reference [https://docs.ipfs.io/reference/http/api/]
+By simply using the same host and port you can access to the same endpoints as the IPFS HTTP API.
+
+For example
+### POST `http://localhost:8080/api/v0/version`
