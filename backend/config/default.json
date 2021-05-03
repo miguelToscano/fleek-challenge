@@ -1,0 +1,25 @@
+{
+  "api": {
+    "port": 8080,
+    "killTimeout": 0,
+    "compression": true,
+    "requestTiemout": 10000,
+    "bodySizeLimit": 10000000,
+    "parameterLimit":10000
+  },
+  "auth": {
+    "secret": "secret",
+    "saltRounds": 10,
+    "expirationTime": "640000s"
+  },
+  "ipfs": {
+    "host": "localhost",
+    "port": 5001
+  },
+  "database": {
+    "host": "localhost",
+    "port": 27018,
+    "name": "fleek-db"
+  }
+}
+  
