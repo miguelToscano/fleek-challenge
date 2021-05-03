@@ -8,12 +8,7 @@ import ApiKeysTable from "../../common/ApiKeysTable";
 import CreateApiKeyButton from "../../common/CreateApiKeyButton"
 // import "./dataTable.scss";
 import * as apiKeysService from "../../../services/apiKeys"
-
-const getToken = () => {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken
-};
+import getToken from "../../utils/getToken"
 
 const ApiKeys = () => {
   const [state, dispatch] = useApiKeysStore();

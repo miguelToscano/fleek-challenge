@@ -5,12 +5,7 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import './DisableApiKeyButton.scss';
 import * as apiKeysService from '../../../services/apiKeys'
-
-const getToken = () => {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken
-};
+import getToken from "../../utils/getToken"
 
 const DisableApiKeyButton = ({ apiKey ,styleButton, valueButton}) => {
 

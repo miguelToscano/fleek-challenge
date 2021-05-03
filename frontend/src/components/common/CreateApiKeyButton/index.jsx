@@ -2,12 +2,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import './CreateApiKeyButton.scss';
 import * as apiKeysService from '../../../services/apiKeys'
-
-const getToken = () => {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken
-};
+import getToken from "../../utils/getToken"
 
 const CreateApiKeyButton = ({ styleButton, valueButton}) => {
 
