@@ -23,7 +23,6 @@ export const getApiKeys = async (dispatch, authorization) => {
       dispatch({ type: FETCH_API_KEYS, payload: data.apiKeys });
       return { errorCode: errorCode, apiKeys: data.apiKeys };
     } catch (error) {
-      console.log(error);
       dispatch({ type: ERROR, payload: error });
       return { errorCode: 500, apiKeys: null };
     }
@@ -64,7 +63,6 @@ export const disableApiKey = async (id, dispatch, authorization) => {
     dispatch({ type: FETCH_API_KEY_BY_ID, payload: data.apiKey });
     return { errorCode: errorCode, apiKey: data.apiKey };
   } catch (error) {
-    console.log(error);
     dispatch({ type: ERROR, payload: error });
     return { errorCode: 500, apiKey: null };
   }

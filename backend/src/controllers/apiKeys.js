@@ -23,8 +23,7 @@ const getApiKeys  = async (req, res, next) => {
 const getApiKey  = async (req, res, next) => {
     try {
         const result = await apiKeysService.getApiKeyById(req.params.id)
-        console.log("ENTRA AL CONTROLLER")
-        console.log({ apiKey: result })
+
         return res.status(200).json({ apiKey: result })
     } catch (error) {
         next(error)
