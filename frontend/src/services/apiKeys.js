@@ -5,16 +5,17 @@ import {
 	LOADING
 } from "../components/constants/actions";
 
-const HEADERS = {
-  "Content-Type": "application/json",
-}
 
-export const getApiKeys = async (dispatch) => {
+export const getApiKeys = async (dispatch, authorization) => {
     try {
+      const headers = {
+        'Authorization': String(authorization.token)
+      }
       dispatch({ type: LOADING, payload: true });
       const res = await fetch("http://localhost:8080/v1/apiKeys", {
         method: "GET",
         mode: 'cors',
+        headers
       });
       const errorCode = res.status > 200 ? res.status : false;
       let data = null;
@@ -31,27 +32,34 @@ export const getApiKeys = async (dispatch) => {
     }
 };
 
-export const createApiKey = async (dispatch, newPromo) => {
+export const createApiKey = async (dispatch, apiKey, authorization) => {
   try {
-    const body = JSON.stringify({ promotion: newPromo })
+    const headers = {
+      'Authorization': String(authorization.token)
+    }
+    const body = JSON.stringify({ promotion: apiKey })
     const res = await fetch("http://localhost:8080/v1/apiKeys", {
       method: "POST",
       mode: 'cors',
       body: body,
-      headers: HEADERS,
+      headers
     });
     return res.json();
   } catch (error) {
-    return { errorCode: 500, newPromo: null };
+    return { errorCode: 500, apiKey: null };
   }
 };
 
-export const disableApiKey = async (id, dispatch) => {
+export const disableApiKey = async (id, dispatch, authorization) => {
   try {
+    const headers = {
+      'Authorization': String(authorization.token)
+    }
     dispatch({ type: LOADING, payload: true });
     const res = await fetch(`http://localhost:8080/v1/apiKeys/${id}/disable`, {
       method: "POST",
       mode: 'cors',
+      headers
     });
     const errorCode = res.status > 200 ? res.status : false;
     let data = null;

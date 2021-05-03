@@ -11,10 +11,10 @@ const bind = app => {
     app.post('/v1/users', usersController.createUser)
     app.post('/v1/users/login', usersController.login)
     
-    app.post('/v1/apiKeys', apiKeysController.createApiKey)
-    app.post('/v1/apiKeys/:id/disable', apiKeysController.disableApiKey)
-    app.get('/v1/apiKeys', apiKeysController.getApiKeys)
-    app.get('/v1/apiKeys/:id', apiKeysController.getApiKey)
+    app.post('/v1/apiKeys', [authentication.authenticateUser], apiKeysController.createApiKey)
+    app.post('/v1/apiKeys/:id/disable', [authentication.authenticateUser], apiKeysController.disableApiKey)
+    app.get('/v1/apiKeys', [authentication.authenticateUser], apiKeysController.getApiKeys)
+    app.get('/v1/apiKeys/:id', [authentication.authenticateUser], apiKeysController.getApiKey)
 }
 
 module.exports = { bind }

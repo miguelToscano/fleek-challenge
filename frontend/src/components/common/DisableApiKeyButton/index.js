@@ -6,11 +6,19 @@ import { useHistory } from "react-router-dom";
 import './DisableApiKeyButton.scss';
 import * as apiKeysService from '../../../services/apiKeys'
 
+const getToken = () => {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken
+};
+
 const DisableApiKeyButton = ({ apiKey ,styleButton, valueButton}) => {
 
     const { id } = useParams(); 
     const [state, dispatch] = useApiKeysStore();
     const [stateActive, setStateActive] = useState(false);
+
+    const authorization = getToken()
 
     const history = useHistory()
 
@@ -20,7 +28,7 @@ const DisableApiKeyButton = ({ apiKey ,styleButton, valueButton}) => {
           value="Disable"
           disabled={!apiKey.active}
           onClick={async () => {
-            await apiKeysService.disableApiKey(apiKey._id, dispatch)
+            await apiKeysService.disableApiKey(apiKey._id, dispatch, authorization)
             return history.go(0);
           }}
         />

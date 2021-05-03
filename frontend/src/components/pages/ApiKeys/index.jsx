@@ -9,12 +9,20 @@ import CreateApiKeyButton from "../../common/CreateApiKeyButton"
 // import "./dataTable.scss";
 import * as apiKeysService from "../../../services/apiKeys"
 
+const getToken = () => {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken
+};
+
 const ApiKeys = () => {
   const [state, dispatch] = useApiKeysStore();
   const [stateActive, setStateActive] = useState(false);
 
+  const authorization = getToken()
+
   useEffect(() => {
-    apiKeysService.getApiKeys(dispatch);
+    apiKeysService.getApiKeys(dispatch, authorization);
   }, [stateActive]);
 
   const saveList = () => {
