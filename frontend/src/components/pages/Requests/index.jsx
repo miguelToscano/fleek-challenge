@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useApiKeysStore } from "../../providers/apiKeysMsProvider";
 import { useParams } from "react-router-dom";
-import Loader from "../../common/Loader";
 import RequestsTable from "../../common/RequestsTable";
 
 const Requests = () => {
@@ -15,9 +14,7 @@ const Requests = () => {
 
   return (
       <>
-        {state.loading ? (
-          <Loader />
-        ) : (
+        {(
           <>
             {/* <Header /> */}
             <RequestsTable requests={state.apiKeys.find(apiKey => apiKey._id === id).requests} saveCallback={saveList} />

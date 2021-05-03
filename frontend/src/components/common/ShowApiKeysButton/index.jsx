@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { history } from "../../utils/history"
-import './ShowApiKeysButton.scss';
+import "./ShowApiKeysButton.scss";
 
 const goToApiKeysPage = (path) => {
   history.push(path)
@@ -9,7 +9,7 @@ const goToApiKeysPage = (path) => {
 const ShowRequestsButton = ({}) => {
     return (
     <>
-        <input className='flat-button-show-api-keys'
+        <input className="flat-button-show-api-keys"
           value="Go back"
           onClick={() => goToApiKeysPage(`/apiKeys`)}
         />

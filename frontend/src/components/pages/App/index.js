@@ -1,11 +1,11 @@
-import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
-import './App.css';
-import ApiKeys from '../ApiKeys';
-import Requests from '../Requests'
-import Login from '../Login';
-import useToken from './useToken';
-import { ApiKeysMsProvider } from '../../providers/apiKeysMsProvider'
+import React from "react";
+import { Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import ApiKeys from "../ApiKeys";
+import Requests from "../Requests"
+import Login from "../Login";
+import useToken from "./useToken";
+import { ApiKeysMsProvider } from "../../providers/apiKeysMsProvider"
 import { history } from "../../utils/history";
 
 const App = () => {

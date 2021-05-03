@@ -1,6 +1,6 @@
 import React from "react";
 import RequestRow from "../RequestRow";
-import ShowApiKeysButton from '../ShowApiKeysButton'
+import ShowApiKeysButton from "../ShowApiKeysButton"
 import "./RequestsTable.scss";
 
 const RequestsTable = ({ requests, saveCallback }) => {

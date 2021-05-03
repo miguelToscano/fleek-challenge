@@ -27,9 +27,6 @@ export const getApiKeys = async (dispatch, authorization) => {
       dispatch({ type: ERROR, payload: error });
       return { errorCode: 500, apiKeys: null };
     }
-    finally {
-      dispatch({ type: LOADING, payload: false });
-    }
 };
 
 export const createApiKey = async (dispatch, apiKey, authorization) => {
@@ -70,8 +67,5 @@ export const disableApiKey = async (id, dispatch, authorization) => {
     console.log(error);
     dispatch({ type: ERROR, payload: error });
     return { errorCode: 500, apiKey: null };
-  }
-  finally {
-    dispatch({ type: LOADING, payload: false });
   }
 }

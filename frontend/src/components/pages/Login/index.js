@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import { history } from "../../utils/history"
 
-import './Login.css';
+import "./Login.css";
 
 async function loginUser(credentials) {
-  return fetch('http://localhost:8080/v1/users/login', {
-  method: 'POST',
+  return fetch("http://localhost:8080/v1/users/login", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json'
+    "Content-Type": "application/json"
   },
   body: JSON.stringify(credentials)
 })
@@ -28,9 +28,9 @@ export default function Login({ setToken }) {
         password
       });
       setToken(authorization);
-      history.push('/apiKeys')
+      history.push("/apiKeys")
     } catch (error) {
-      history.push('/')
+      history.push("/")
     }
   }
   
