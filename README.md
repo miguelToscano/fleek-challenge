@@ -15,6 +15,9 @@ You can access the web client from `http://localhost/3000` by using `admin:admin
 
 ## Endpoints
 
+### Postman Collection
+https://www.getpostman.com/collections/2b668f8971b048201542
+
 ### POST `http://localhost:8080/v1/users`
 Creates a user by providing email and password.
 
