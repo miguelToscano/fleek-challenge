@@ -17,9 +17,9 @@
     "port": 5001
   },
   "database": {
-    "host": "localhost",
-    "port": 27018,
-    "name": "fleek-db"
+    "host": "mongo",
+    "port": 27017,
+    "name": "fleek-backend"
   }
 }
   

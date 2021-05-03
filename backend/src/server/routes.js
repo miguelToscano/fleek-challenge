@@ -1,9 +1,12 @@
+const healthController = require('../controllers/health')
 const apiKeysController = require('../controllers/apiKeys')
 const usersController = require('../controllers/users')
 const authentication = require('../middlewares/authentication')
+const mongoose = require('mongoose')
+const config = require('config')
 
 const bind = app => {
-    app.get('/health', (req, res, next) => res.status(200).json({ message: 'Im alive!' }))
+    app.get('/health', healthController.check)
 
     app.post('/v1/users', usersController.createUser)
     app.post('/v1/users/login', usersController.login)

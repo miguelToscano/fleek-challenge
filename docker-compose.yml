@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  fleek-backend:
+    container_name: node
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    external_links: 
+      - mongo
+    restart: always
+    ports:
+      - "8080:8080"
+    # command: ./wait-for.sh db:27018 -- /home/node/app/node_modules/.bin/nodemon app.js
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    # restart: unless-stopped
+    #   - dbdata:/data/db
+    ports: 
+      - "27017:27017"
+
+  fleek-frontend:
+    container_name: react
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
