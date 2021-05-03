@@ -10,7 +10,11 @@ const authenticateApiKey = async (proxyReq, req, res) => {
 
         const apiKey = await apiKeysService.getApiKeyByValue(req.headers.api_key)
 
-        if (!apiKey && !apiKey.active ) {
+        if (!apiKey) {
+            throw errors.createError(401, 'Unauthorized')
+        }
+
+        if (apiKey.active === false) {
             throw errors.createError(401, 'Unauthorized')
         }
 

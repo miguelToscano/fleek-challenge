@@ -8,13 +8,11 @@ const config = require('config')
 const bind = app => {
     app.get('/health', healthController.check)
 
-    app.post('/v1/users', usersController.createUser)
     app.post('/v1/users/login', usersController.login)
     
     app.post('/v1/apiKeys', [authentication.authenticateUser], apiKeysController.createApiKey)
     app.post('/v1/apiKeys/:id/disable', [authentication.authenticateUser], apiKeysController.disableApiKey)
     app.get('/v1/apiKeys', [authentication.authenticateUser], apiKeysController.getApiKeys)
-    app.get('/v1/apiKeys/:id', [authentication.authenticateUser], apiKeysController.getApiKey)
 }
 
 module.exports = { bind }
