@@ -5,6 +5,7 @@ import {
 	LOADING
 } from "../components/constants/actions";
 
+const BACKEND_URL = "http://localhost:8080"
 
 export const getApiKeys = async (dispatch, authorization) => {
     try {
@@ -12,7 +13,7 @@ export const getApiKeys = async (dispatch, authorization) => {
         'Authorization': String(authorization.token)
       }
       dispatch({ type: LOADING, payload: true });
-      const res = await fetch("http://localhost:8080/v1/apiKeys", {
+      const res = await fetch(`${BACKEND_URL}/v1/apiKeys`, {
         method: "GET",
         mode: 'cors',
         headers
@@ -34,7 +35,7 @@ export const createApiKey = async (dispatch, apiKey, authorization) => {
       'Authorization': String(authorization.token)
     }
     const body = JSON.stringify({ promotion: apiKey })
-    const res = await fetch("http://localhost:8080/v1/apiKeys", {
+    const res = await fetch(`${BACKEND_URL}/v1/apiKeys`, {
       method: "POST",
       mode: 'cors',
       body: body,
@@ -52,7 +53,7 @@ export const disableApiKey = async (id, dispatch, authorization) => {
       'Authorization': String(authorization.token)
     }
     dispatch({ type: LOADING, payload: true });
-    const res = await fetch(`http://localhost:8080/v1/apiKeys/${id}/disable`, {
+    const res = await fetch(`${BACKEND_URL}/v1/apiKeys/${id}/disable`, {
       method: "POST",
       mode: 'cors',
       headers
