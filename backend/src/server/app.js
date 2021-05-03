@@ -43,15 +43,10 @@ const proxyOptions = {
   pathRewrite: {
     ['^/api/v0']: ''
   },
-  // selfHandleResponse: true,
   onProxyReq: async (proxyReq, req, res) => {
       await proxyMiddleware.authenticateApiKey(proxyReq, req, res)
       await proxyMiddleware.saveRequest(proxyReq, req, res)
-      // res.status(305)
   },
-  // onProxyRes: async (proxyRes, req, res) => {
-  //   return res.status(305).send(proxyRes)
-  // }
 }
 
 app.use('/api/v0', createProxyMiddleware(proxyOptions));

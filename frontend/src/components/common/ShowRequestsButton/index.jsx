@@ -11,7 +11,7 @@ const ShowRequestsButton = ({ apiKey ,styleButton, valueButton}) => {
     <>
       <input className="flat-button-show-requests"
         value="Show requests"
-        disabled={!(apiKey.active && apiKey.requests && apiKey.requests.length)}
+        disabled={!(apiKey && apiKey.requests.length)}
         onClick={() => goToRequestsPage(`/apiKeys/${apiKey._id}`)}
       />
     </>
