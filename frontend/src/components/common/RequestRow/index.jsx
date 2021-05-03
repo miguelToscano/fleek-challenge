@@ -9,9 +9,9 @@ const RequestRow = ({ request, key, saveCallback }) => {
   } = request;
 
   return (
-    <div class="table-row">
-            <div class="table-data">{path}</div>
-            <div class="table-data">{createdAt}</div>
+    <div className="table-row">
+      <div className="table-data">{path}</div>
+      <div className="table-data">{createdAt}</div>
     </div>
   );
 };

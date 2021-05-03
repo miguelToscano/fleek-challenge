@@ -11,12 +11,12 @@ const ApiKeyRow = ({ apiKey, saveCallback }) => {
   } = apiKey;
 
   return (
-    <div class="table-row">
-            <div class="table-data">{value}</div>
-            <div class="table-data">{active ? "true" : "false"}</div>
-            <div class="table-data">{createdAt}</div>
-            <div class="table-data"><ShowRequestsButton apiKey={apiKey}/></div>
-            <div class="table-data"><DisableApiKeyButton apiKey={apiKey}/></div>
+    <div className="table-row">
+      <div className="table-data">{value}</div>
+      <div className="table-data">{active ? "true" : "false"}</div>
+      <div className="table-data">{createdAt}</div>
+      <div className="table-data"><ShowRequestsButton apiKey={apiKey}/></div>
+      <div className="table-data"><DisableApiKeyButton apiKey={apiKey}/></div>
     </div>
   )
 };

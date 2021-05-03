@@ -5,21 +5,21 @@ import "./ApiKeysTable.scss";
 
 const ApiKeysTable = ({ apiKeys, saveCallback }) => {
   return (
-    <div class="container">
+    <div className="container">
 	
-      <div class="table">
-        <div class="table-header">
-          <div class="header__item"><a id="name" class="filter__link" href="#">key</a></div>
-          <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">active</a></div>
-          <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">created at</a></div>
-          <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">actions</a></div>
+      <div className="table">
+        <div className="table-header">
+          <div className="header__item"><a id="name" className="filter__link" href="#">key</a></div>
+          <div className="header__item"><a id="wins" className="filter__link filter__link--number" href="#">active</a></div>
+          <div className="header__item"><a id="draws" className="filter__link filter__link--number" href="#">created at</a></div>
+          <div className="header__item"><a id="losses" className="filter__link filter__link--number" href="#">actions</a></div>
         </div>
-        <div class="table-content">	
+        <div className="table-content">	
           { apiKeys ? apiKeys.map((apiKey, key) => (
             <ApiKeyRow apiKey={apiKey} key={key} saveCallback={saveCallback} />
           )): []}
-          <div class="table-row">
-            <div class="table-data"><CreateApiKeyButton/></div>
+          <div className="table-row">
+            <div className="table-data"><CreateApiKeyButton/></div>
           </div>
         </div>	
       </div>

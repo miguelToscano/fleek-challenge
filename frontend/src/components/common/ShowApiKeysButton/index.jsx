@@ -9,10 +9,10 @@ const goToApiKeysPage = (path) => {
 const ShowRequestsButton = ({}) => {
     return (
     <>
-        <input className="flat-button-show-api-keys"
-          value="Go back"
-          onClick={() => goToApiKeysPage(`/apiKeys`)}
-        />
+      <input className="flat-button-show-api-keys"
+        value="Go back"
+        onClick={() => goToApiKeysPage(`/apiKeys`)}
+      />
     </>
     );
 }

@@ -34,7 +34,7 @@ export const createApiKey = async (dispatch, apiKey, authorization) => {
     const headers = {
       'Authorization': String(authorization.token)
     }
-    const body = JSON.stringify({ promotion: apiKey })
+    const body = JSON.stringify({ apiKey })
     const res = await fetch(`${BACKEND_URL}/v1/apiKeys`, {
       method: "POST",
       mode: 'cors',

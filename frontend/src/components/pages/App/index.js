@@ -23,9 +23,6 @@ const App = () => {
             <Route exact path="/apiKeys" render={() => <ApiKeys />} />
             <Route exact path="/apiKeys/:id" render={() => <Requests />} />
             <Route exact path="/apiKeys/:id/disable" render={() => <ApiKeys />} />
-            <Route path="/marketing-tool/login" exact>
-              <Login />
-            </Route>
           </Switch>
         </Router>
       </ApiKeysMsProvider>

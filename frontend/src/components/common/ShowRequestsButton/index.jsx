@@ -9,11 +9,11 @@ const goToRequestsPage = (path) => {
 const ShowRequestsButton = ({ apiKey ,styleButton, valueButton}) => {
     return (
     <>
-        <input className="flat-button-show-requests"
-          value="Show requests"
-          disabled={!(apiKey.active && apiKey.requests && apiKey.requests.length)}
-          onClick={() => goToRequestsPage(`/apiKeys/${apiKey._id}`)}
-        />
+      <input className="flat-button-show-requests"
+        value="Show requests"
+        disabled={!(apiKey.active && apiKey.requests && apiKey.requests.length)}
+        onClick={() => goToRequestsPage(`/apiKeys/${apiKey._id}`)}
+      />
     </>
     );
 }

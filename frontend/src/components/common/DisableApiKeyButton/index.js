@@ -17,14 +17,14 @@ const DisableApiKeyButton = ({ apiKey ,styleButton, valueButton}) => {
 
     return (
     <>
-        <input className="flat-button-disable-api-key"
-          value="Disable"
-          disabled={!apiKey.active}
-          onClick={async () => {
-            await apiKeysService.disableApiKey(apiKey._id, dispatch, authorization)
-            return history.go(0);
-          }}
-        />
+      <input className="flat-button-disable-api-key"
+        value="Disable"
+        disabled={!apiKey.active}
+        onClick={async () => {
+          await apiKeysService.disableApiKey(apiKey._id, dispatch, authorization)
+          return history.go(0);
+        }}
+      />
     </>
     );
 }
