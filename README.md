@@ -54,3 +54,11 @@ deployment)?
 - Database credentials
 - Every container is accesible by anyone with access to localhost
 
+## HTTP vs IPFS
+- Unlike HTTP, IPFS uses a decentralized approach
+- IPFS requests data by hash
+- Given enough nodes, IPFS has more availability as the same resources are stored in many nodes
+- HTTP has to deal with more traffic as many clients request the same server
+- The price of hosting a server when using HTTP has to be considered
+- IPFS is not as popular as HTTP
+
