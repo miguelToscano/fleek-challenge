@@ -43,3 +43,14 @@ By simply using the same host and port you can access to the same endpoints as t
 
 For example
 ### POST `http://localhost:8080/api/v0/version`
+
+## Written Questions
+
+How would you improve this assignment for a production ready solution (e.g., security,
+deployment)?
+
+- Environment variables
+- Tests
+- Database credentials
+- Every container is accesible by anyone with access to localhost
+
